@@ -13,6 +13,8 @@ def test_ok_sample():
 def test_flask_simple():
     app.config['TESTING'] = True
     client = app.test_client() 
+    result = client.get('/')
+    assert b'root' == result.data
 
 def test_flask_simple1():
     app1.config['TESTING'] = True
